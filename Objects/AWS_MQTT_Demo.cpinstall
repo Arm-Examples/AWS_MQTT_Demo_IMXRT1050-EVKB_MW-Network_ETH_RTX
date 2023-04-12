@@ -1,0 +1,11 @@
+ARM::mbedTLS@1.7.0
+MDK-Packs::AWS_IoT_Device
+ARM::CMSIS-Driver
+ARM::CMSIS
+Keil::ARM_Compiler
+Keil::IMXRT1050-EVKB_BSP@1.1.1
+Keil::iMXRT105x_MWP@1.5.1
+NXP::EVKB-IMXRT1050_BSP@15.1.0
+NXP::MIMXRT1052_DFP@15.1.0
+Keil::MDK-Middleware
+MDK-Packs::IoT_Socket

@@ -1,0 +1,13 @@
+[
+{"vendor": "ARM", "name": "mbedTLS", "version": "1.7.0"},
+{"vendor": "MDK-Packs", "name": "AWS_IoT_Device"},
+{"vendor": "ARM", "name": "CMSIS-Driver"},
+{"vendor": "ARM", "name": "CMSIS"},
+{"vendor": "Keil", "name": "ARM_Compiler"},
+{"vendor": "Keil", "name": "IMXRT1050-EVKB_BSP", "version": "1.1.1"},
+{"vendor": "Keil", "name": "iMXRT105x_MWP", "version": "1.5.1"},
+{"vendor": "NXP", "name": "EVKB-IMXRT1050_BSP", "version": "15.1.0"},
+{"vendor": "NXP", "name": "MIMXRT1052_DFP", "version": "15.1.0"},
+{"vendor": "Keil", "name": "MDK-Middleware"},
+{"vendor": "MDK-Packs", "name": "IoT_Socket"}
+]

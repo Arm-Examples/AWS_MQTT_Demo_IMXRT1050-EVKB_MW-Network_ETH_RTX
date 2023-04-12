@@ -1,5 +1,6 @@
 /*---------------------------------------------------------------------------
- * Copyright (c) 2021 Arm Limited (or its affiliates). All rights reserved.
+ * Copyright (c) 2021-2022 Arm Limited (or its affiliates). 
+ * All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -29,6 +30,7 @@
 #include "clock_config.h"
 #include "board.h"
 #include "pin_mux.h"
+#include "peripherals.h"
 #include "fsl_iomuxc.h"
 #include "fsl_dmamux.h"
 #include "fsl_sai_edma.h"
@@ -47,6 +49,8 @@ void     LPUART3_DeinitPins(void) { /* Not implemented */ }
 int main (void) {
   edma_config_t DmaConfig;
 
+  BOARD_ConfigMPU();
+  BOARD_InitBootPeripherals();
   BOARD_InitBootPins();
   BOARD_InitBootClocks();
   BOARD_InitDebugConsole();
@@ -63,6 +67,11 @@ int main (void) {
   EDMA_Init (DMA0,       &DmaConfig);
 
   SystemCoreClockUpdate();
+
+  /* Reset Ethernet PHY (Required 100 us delay for PHY power on reset) */
+  GPIO_PinWrite(GPIO1,  9U, 0U);
+  SDK_DelayAtLeastUs(500U, CLOCK_GetFreq(kCLOCK_CpuClk));
+  GPIO_PinWrite(GPIO1,  9U, 1U);
 
 #ifdef RTE_VIO_BOARD
   vioInit();                            // Initialize Virtual I/O
